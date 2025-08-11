@@ -8,7 +8,7 @@ An AI-powered email assistant that monitors incoming emails and responds automat
 - Sends email content to an AI agent (using Perplexity API) for generating responses.
 - Parses and executes commands returned by the AI.
 - Configurable via a simple GUI with connection settings and start prompt.
-- Asynchronous task management with start/stop controls.
+- Asynchronous task management.
 
 ## Requirements
 
