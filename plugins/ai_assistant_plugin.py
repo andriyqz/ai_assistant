@@ -93,16 +93,20 @@ class AsyncPluginWidget(QWidget):
             check_interval=10,
         )
 
-        async for mail in mails_monitor.fetch_new_emails():
-            response = await ai_agent.send_message(
-                f'{mail["from"]} sent a message with subject: {mail["subject"]} and body: {mail["body"]}'
-            )
-            if response == 'ignore':
-                print('ignore')
+        while True:
+            async for mail in mails_monitor.fetch_new_emails():
+                response = await ai_agent.send_message(
+                    f'{mail["from"]} sent a message with subject: {mail["subject"]} and body: {mail["body"]}'
+                )
+                if response == 'ignore':
+                    print('ignore')
 
-            commands = parse_commands(response)
-            for command in commands:
-                await handle_command(command)
+                commands = parse_commands(response)
+                for command in commands:
+                    await handle_command(command)
+
+            print('yo')
+            await asyncio.sleep(mails_monitor.check_interval)
 
     async def long_task(self):
         try:
