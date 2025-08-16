@@ -10,6 +10,8 @@ An AI-powered email assistant that monitors incoming emails and responds automat
 - Configurable via a simple GUI with connection settings and start prompt.
 - Asynchronous task management.
 
+<img width="890" height="693" alt="image" src="https://github.com/user-attachments/assets/35b9f0f8-7df7-4bf2-9b72-291e63004ce0" />
+
 ## Requirements
 
 - Python 3.8+
